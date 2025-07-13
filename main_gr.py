@@ -42,7 +42,7 @@ if st.sidebar.button("Search"):
         "keywords": keywords.strip().lower()
     }
 
-    response = requests.get('http://localhost:5000/startups')
+    response = requests.get('https://smart-scoring-search.onrender.com/startups')
     all_startups = response.json()
 
     filtered_startups = [
