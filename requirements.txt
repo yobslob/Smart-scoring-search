@@ -1,0 +1,8 @@
+langchain
+langchain_community
+langchain_huggingface
+tf_keras
+sentence_transformers
+dotenv
+streamlit
+faiss-cpu
