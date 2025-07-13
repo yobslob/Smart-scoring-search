@@ -1,5 +1,4 @@
-startup_profiles = [
-    # --------- FinTech Startups ---------
+[
     {
         "id": "S1",
         "industry": "FinTech",
@@ -60,8 +59,6 @@ startup_profiles = [
         "team_strength": "2 founders, YC-backed",
         "region": "India"
     },
-
-    # --------- HealthTech Startups ---------
     {
         "id": "S6",
         "industry": "HealthTech",
@@ -122,8 +119,6 @@ startup_profiles = [
         "team_strength": "IIT + healthcare professionals",
         "region": "India"
     },
-
-    # --------- SaaS Startups ---------
     {
         "id": "S11",
         "industry": "SaaS",
