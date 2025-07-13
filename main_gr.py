@@ -2,6 +2,7 @@ import streamlit as st
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.schema import Document
+from models.startup_profiles import startup_profiles
 import os
 
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
@@ -11,68 +12,6 @@ embedding_model = HuggingFaceEmbeddings(
     model_name="BAAI/bge-small-en-v1.5",
     encode_kwargs={"normalize_embeddings": True}
 )
-
-# Hardcoded Startup Profiles
-startup_profiles = [
-    {
-        "id": "S1",
-        "industry": "FinTech",
-        "stage": "MVP",
-        "tagline": "Cashless for rural India",
-        "description": "UPI wallet for the unbanked",
-        "problem": "No access to digital finance",
-        "solution": "Offline-first wallet",
-        "mission": "Financial inclusion in Tier-2/3",
-        "MRR": 30000,
-        "growth_rate": 0.12,
-        "team_strength": "Ex-Razorpay founder, 6 team members",
-        "burn_rate": 20000,
-        "engagement": 85,
-        "region": "India",
-        # MnA-related fields (placeholders)
-        "team_experience_score": 0.8,  # e.g., prior acquisition experience
-        "market_potential_score": 0.7,  # e.g., high acquisition activity in sector
-        "tech_uniqueness_score": 0.9   # e.g., proprietary tech
-    },
-    {
-        "id": "S2",
-        "industry": "HealthTech",
-        "stage": "Scaling",
-        "tagline": "AI for pathology labs",
-        "description": "Smart analysis of diagnostic reports",
-        "problem": "Delayed diagnosis",
-        "solution": "AI diagnostic assistant",
-        "mission": "Faster affordable testing",
-        "MRR": 100000,
-        "growth_rate": 0.07,
-        "team_strength": "PhDs in BioAI, 15 team members",
-        "burn_rate": 50000,
-        "engagement": 60,
-        "region": "US",
-        "team_experience_score": 0.6,
-        "market_potential_score": 0.8,
-        "tech_uniqueness_score": 0.85
-    },
-    {
-        "id": "S3",
-        "industry": "SaaS",
-        "stage": "Seed",
-        "tagline": "CRM for micro-businesses",
-        "description": "Easy-to-use sales pipeline tool",
-        "problem": "No software adoption",
-        "solution": "WhatsApp-integrated CRM",
-        "mission": "Empower SMBs with tech",
-        "MRR": 15000,
-        "growth_rate": 0.25,
-        "team_strength": "Young solo founder",
-        "burn_rate": 5000,
-        "engagement": 75,
-        "region": "India",
-        "team_experience_score": 0.5,
-        "market_potential_score": 0.6,
-        "tech_uniqueness_score": 0.7
-    }
-]
 
 st.title("Smart Startup Search Engine")
 
@@ -108,7 +47,8 @@ if st.sidebar.button("Search"):
             startup["MRR"] >= min_mrr and
             startup["growth_rate"] * 100 >= min_growth_rate and
             startup["burn_rate"] <= max_burn_rate and
-            startup["region"] in investor_profile["region_focus"]
+            startup["region"] in investor_profile["region_focus"] and
+            startup["industry"] in investor_profile["sector_focus"]
         )
         if passes_filters:
             if keyword_list:
@@ -155,7 +95,7 @@ if st.sidebar.button("Search"):
         ])
 
         # Semantic Search
-        semantic_matches = vectorstore.similarity_search_with_score(investor_text, k=min(5, len(filtered_startups)))
+        semantic_matches = vectorstore.similarity_search_with_score(investor_text, k=len(filtered_startups))
 
         # Enhanced Smart Scoring Function
         def smart_score(startup, similarity_score):
@@ -206,7 +146,7 @@ if st.sidebar.button("Search"):
             st.markdown("---")
             st.markdown(f"### {startup['tagline']}")
             st.markdown(f"**Sector:** {startup['industry']} | **Stage:** {startup['stage']} | **Region:** {startup['region']}")
-            st.markdown(f"**Score:** `{score}/100`")
+            st.markdown(f"**Score:** `{score:.2f}/100`")
             st.markdown(f"**MRR:** ₹{startup['MRR']} | **Growth:** {int(startup['growth_rate']*100)}% | **Burn:** ₹{startup['burn_rate']}")
             st.markdown(f"**Engagement:** {startup['engagement']}% | **Team:** {startup['team_strength']}")
             st.markdown(f"**Mission:** *{startup['mission']}*")
