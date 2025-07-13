@@ -15,6 +15,3 @@ def get_startups():
     else:
         filtered = startups
     return jsonify(filtered)
-
-if __name__ == '__main__':
-    app.run(debug=True)
