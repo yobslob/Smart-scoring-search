@@ -1,0 +1,37 @@
+{
+  "startup_name": "Learnly",
+  "logo_url": "https://example.com/logos/learnly.png",
+  "industry": "EdTech",
+  "startup_stage": "Growth",
+  "tagline": "Affordable live tutoring for India's next billion learners.",
+  "description": "Learnly offers personalized tutoring to K-12 students across India using adaptive learning and bilingual support.",
+  "problem": "High-quality tutoring is unaffordable and inaccessible in Tier 2 and Tier 3 cities.",
+  "solution": "Live classes and AI-personalized learning journeys in local languages.",
+  "mission": "To democratize quality education for every Indian student.",
+  "website_url": "https://learnly.in",
+  "app_store_links": {
+    "android": "https://play.google.com/store/apps/details?id=learnly.app",
+    "ios": "https://apps.apple.com/app/learnly/id1122446688"
+  },
+  "pitch_deck_url": "https://example.com/pitchdecks/learnly.pdf",
+  "funding_ask": {
+    "amount_inr": 83000000,
+    "equity_offered_percent": 8
+  },
+  "key_metrics": {
+    "monthly_revenue_inr": 3320000,
+    "active_users": 12000,
+    "cac_inr": 500,
+    "mrr_inr": 3237000
+  },
+  "team_members": [
+    {
+      "name": "Rohit Sinha",
+      "role": "CEO & Co-founder"
+    },
+    {
+      "name": "Ishita Nair",
+      "role": "COO & Co-founder"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "startup_name": "BareGlow Naturals",
+  "logo_url": "https://example.com/logos/bareglow.png",
+  "industry": "D2C / Beauty",
+  "startup_stage": "Revenue",
+  "tagline": "Ayurvedic skincare, rooted in science.",
+  "description": "A D2C skincare brand using traditional Ayurvedic ingredients with modern formulation standards.",
+  "problem": "Consumers lack affordable yet high-quality natural skincare options.",
+  "solution": "Lab-tested, clean-label Ayurvedic skincare delivered directly to consumers.",
+  "mission": "To bring ancient beauty secrets to every Indian home.",
+  "website_url": "https://bareglow.in",
+  "app_store_links": {
+    "android": "https://play.google.com/store/apps/details?id=bareglow.app",
+    "ios": "https://apps.apple.com/app/bareglow/id8899007766"
+  },
+  "pitch_deck_url": "https://example.com/pitchdecks/bareglow.pdf",
+  "funding_ask": {
+    "amount_inr": 41500000,
+    "equity_offered_percent": 10
+  },
+  "key_metrics": {
+    "monthly_revenue_inr": 3735000,
+    "active_users": 5500,
+    "cac_inr": 660,
+    "mrr_inr": 3569000
+  },
+  "team_members": [
+    {
+      "name": "Ritika Basu",
+      "role": "Founder"
+    },
+    {
+      "name": "Tanay Mehta",
+      "role": "CMO"
+    }
+  ]
+}

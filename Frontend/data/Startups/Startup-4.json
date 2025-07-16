@@ -1,0 +1,37 @@
+{
+  "startup_name": "ProcureHub",
+  "logo_url": "https://example.com/logos/procurehub.png",
+  "industry": "SaaS / B2B",
+  "startup_stage": "Pre-Series A",
+  "tagline": "Streamlining procurement for Indian SMEs.",
+  "description": "ProcureHub automates the purchase order and supplier management workflows for small manufacturers.",
+  "problem": "Manual procurement processes lead to delays and errors in Indian SMEs.",
+  "solution": "A SaaS platform with inventory sync, vendor matching, and automated POs.",
+  "mission": "To digitize India's manufacturing backbone.",
+  "website_url": "https://procurehub.in",
+  "app_store_links": {
+    "android": "https://play.google.com/store/apps/details?id=procurehub.app",
+    "ios": "https://apps.apple.com/app/procurehub/id998877112"
+  },
+  "pitch_deck_url": "https://example.com/pitchdecks/procurehub.pdf",
+  "funding_ask": {
+    "amount_inr": 62250000,
+    "equity_offered_percent": 11
+  },
+  "key_metrics": {
+    "monthly_revenue_inr": 2656000,
+    "active_users": 160,
+    "cac_inr": 4150,
+    "mrr_inr": 2490000
+  },
+  "team_members": [
+    {
+      "name": "Sahil Arora",
+      "role": "Founder & CEO"
+    },
+    {
+      "name": "Meenal Jha",
+      "role": "Chief Growth Officer"
+    }
+  ]
+}

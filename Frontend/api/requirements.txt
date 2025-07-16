@@ -1,0 +1,4 @@
+flask
+langchain
+langchain-google-genai
+chromadb
