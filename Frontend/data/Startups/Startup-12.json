@@ -1,0 +1,37 @@
+{
+  "startup_name": "Startup12",
+  "logo_url": "https://example.com/logos/startup12.png",
+  "industry": "Tech",
+  "startup_stage": "Seed",
+  "tagline": "Tagline for Startup12.",
+  "description": "Startup12 is solving tech problems with cutting-edge innovation.",
+  "problem": "Problem faced in Startup12.",
+  "solution": "Solution offered by Startup12.",
+  "mission": "Mission of Startup12 is to innovate and inspire.",
+  "website_url": "https://startup12.com",
+  "app_store_links": {
+    "android": "https://play.google.com/store/apps/details?id=startup12.app",
+    "ios": "https://apps.apple.com/app/startup12/id1000012"
+  },
+  "pitch_deck_url": "https://example.com/pitchdecks/startup12.pdf",
+  "funding_ask": {
+    "amount_inr": 62000000,
+    "equity_offered_percent": 5
+  },
+  "key_metrics": {
+    "monthly_revenue_inr": 2200000,
+    "active_users": 12000,
+    "cac_inr": 420,
+    "mrr_inr": 1070000
+  },
+  "team_members": [
+    {
+      "name": "Founder12 One",
+      "role": "CEO"
+    },
+    {
+      "name": "Founder12 Two",
+      "role": "CTO"
+    }
+  ]
+}

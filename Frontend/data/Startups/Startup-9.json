@@ -1,0 +1,37 @@
+{
+  "startup_name": "Startup9",
+  "logo_url": "https://example.com/logos/startup9.png",
+  "industry": "Tech",
+  "startup_stage": "Seed",
+  "tagline": "Tagline for Startup9.",
+  "description": "Startup9 is solving tech problems with cutting-edge innovation.",
+  "problem": "Problem faced in Startup9.",
+  "solution": "Solution offered by Startup9.",
+  "mission": "Mission of Startup9 is to innovate and inspire.",
+  "website_url": "https://startup9.com",
+  "app_store_links": {
+    "android": "https://play.google.com/store/apps/details?id=startup9.app",
+    "ios": "https://apps.apple.com/app/startup9/id100009"
+  },
+  "pitch_deck_url": "https://example.com/pitchdecks/startup9.pdf",
+  "funding_ask": {
+    "amount_inr": 59000000,
+    "equity_offered_percent": 8
+  },
+  "key_metrics": {
+    "monthly_revenue_inr": 1900000,
+    "active_users": 9000,
+    "cac_inr": 390,
+    "mrr_inr": 1040000
+  },
+  "team_members": [
+    {
+      "name": "Founder9 One",
+      "role": "CEO"
+    },
+    {
+      "name": "Founder9 Two",
+      "role": "CTO"
+    }
+  ]
+}

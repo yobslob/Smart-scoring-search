@@ -1,37 +1,37 @@
 {
-  "startup_name": "MediSwift",
-  "logo_url": "https://example.com/logos/mediswift.png",
-  "industry": "HealthTech",
+  "startup_name": "Finmate",
+  "logo_url": "https://example.com/logos/finmate.png",
+  "industry": "FinTech",
   "startup_stage": "Seed",
-  "tagline": "Instant doctor consultation from your phone.",
-  "description": "MediSwift connects users to certified doctors in under 2 minutes via video, focused on non-metro regions.",
-  "problem": "People in smaller towns face delayed access to qualified doctors.",
-  "solution": "24/7 video consultations, e-prescriptions, and doorstep delivery of medicines.",
-  "mission": "To bridge the healthcare access gap across India.",
-  "website_url": "https://mediswift.health",
+  "tagline": "Your AI-powered financial ally.",
+  "description": "Finmate helps young Indians manage money, plan savings, and invest with confidence.",
+  "problem": "Lack of accessible, personalized financial education for Gen Z.",
+  "solution": "Gamified finance app with AI advisors and automated goal tracking.",
+  "mission": "To make financial literacy and investment accessible to every youth.",
+  "website_url": "https://finmate.in",
   "app_store_links": {
-    "android": "https://play.google.com/store/apps/details?id=mediswift.app",
-    "ios": "https://apps.apple.com/app/mediswift/id998844321"
+    "android": "https://play.google.com/store/apps/details?id=finmate.app",
+    "ios": "https://apps.apple.com/app/finmate/id1223344556"
   },
-  "pitch_deck_url": "https://example.com/pitchdecks/mediswift.pdf",
+  "pitch_deck_url": "https://example.com/pitchdecks/finmate.pdf",
   "funding_ask": {
-    "amount_inr": 49800000,
-    "equity_offered_percent": 12
+    "amount_inr": 27000000,
+    "equity_offered_percent": 7
   },
   "key_metrics": {
-    "monthly_revenue_inr": 1245000,
-    "active_users": 2500,
-    "cac_inr": 1660,
-    "mrr_inr": 1162000
+    "monthly_revenue_inr": 750000,
+    "active_users": 15000,
+    "cac_inr": 150,
+    "mrr_inr": 720000
   },
   "team_members": [
     {
-      "name": "Ankush Patel",
-      "role": "Founder & CEO"
+      "name": "Rudra Mishra",
+      "role": "CEO & Co-founder"
     },
     {
-      "name": "Nikita Rao",
-      "role": "Head of Medical Ops"
+      "name": "Neha Malhotra",
+      "role": "CPO"
     }
   ]
 }

@@ -1,0 +1,37 @@
+{
+  "startup_name": "Startup15",
+  "logo_url": "https://example.com/logos/startup15.png",
+  "industry": "Tech",
+  "startup_stage": "Seed",
+  "tagline": "Tagline for Startup15.",
+  "description": "Startup15 is solving tech problems with cutting-edge innovation.",
+  "problem": "Problem faced in Startup15.",
+  "solution": "Solution offered by Startup15.",
+  "mission": "Mission of Startup15 is to innovate and inspire.",
+  "website_url": "https://startup15.com",
+  "app_store_links": {
+    "android": "https://play.google.com/store/apps/details?id=startup15.app",
+    "ios": "https://apps.apple.com/app/startup15/id1000015"
+  },
+  "pitch_deck_url": "https://example.com/pitchdecks/startup15.pdf",
+  "funding_ask": {
+    "amount_inr": 65000000,
+    "equity_offered_percent": 8
+  },
+  "key_metrics": {
+    "monthly_revenue_inr": 2500000,
+    "active_users": 15000,
+    "cac_inr": 450,
+    "mrr_inr": 1100000
+  },
+  "team_members": [
+    {
+      "name": "Founder15 One",
+      "role": "CEO"
+    },
+    {
+      "name": "Founder15 Two",
+      "role": "CTO"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "startup_name": "Startup13",
+  "logo_url": "https://example.com/logos/startup13.png",
+  "industry": "Tech",
+  "startup_stage": "Seed",
+  "tagline": "Tagline for Startup13.",
+  "description": "Startup13 is solving tech problems with cutting-edge innovation.",
+  "problem": "Problem faced in Startup13.",
+  "solution": "Solution offered by Startup13.",
+  "mission": "Mission of Startup13 is to innovate and inspire.",
+  "website_url": "https://startup13.com",
+  "app_store_links": {
+    "android": "https://play.google.com/store/apps/details?id=startup13.app",
+    "ios": "https://apps.apple.com/app/startup13/id1000013"
+  },
+  "pitch_deck_url": "https://example.com/pitchdecks/startup13.pdf",
+  "funding_ask": {
+    "amount_inr": 63000000,
+    "equity_offered_percent": 6
+  },
+  "key_metrics": {
+    "monthly_revenue_inr": 2300000,
+    "active_users": 13000,
+    "cac_inr": 430,
+    "mrr_inr": 1080000
+  },
+  "team_members": [
+    {
+      "name": "Founder13 One",
+      "role": "CEO"
+    },
+    {
+      "name": "Founder13 Two",
+      "role": "CTO"
+    }
+  ]
+}

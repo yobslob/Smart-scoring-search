@@ -1,0 +1,37 @@
+{
+  "startup_name": "Startup10",
+  "logo_url": "https://example.com/logos/startup10.png",
+  "industry": "Tech",
+  "startup_stage": "Seed",
+  "tagline": "Tagline for Startup10.",
+  "description": "Startup10 is solving tech problems with cutting-edge innovation.",
+  "problem": "Problem faced in Startup10.",
+  "solution": "Solution offered by Startup10.",
+  "mission": "Mission of Startup10 is to innovate and inspire.",
+  "website_url": "https://startup10.com",
+  "app_store_links": {
+    "android": "https://play.google.com/store/apps/details?id=startup10.app",
+    "ios": "https://apps.apple.com/app/startup10/id1000010"
+  },
+  "pitch_deck_url": "https://example.com/pitchdecks/startup10.pdf",
+  "funding_ask": {
+    "amount_inr": 60000000,
+    "equity_offered_percent": 9
+  },
+  "key_metrics": {
+    "monthly_revenue_inr": 2000000,
+    "active_users": 10000,
+    "cac_inr": 400,
+    "mrr_inr": 1050000
+  },
+  "team_members": [
+    {
+      "name": "Founder10 One",
+      "role": "CEO"
+    },
+    {
+      "name": "Founder10 Two",
+      "role": "CTO"
+    }
+  ]
+}

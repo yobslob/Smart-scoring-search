@@ -1,0 +1,37 @@
+{
+  "startup_name": "Startup14",
+  "logo_url": "https://example.com/logos/startup14.png",
+  "industry": "Tech",
+  "startup_stage": "Seed",
+  "tagline": "Tagline for Startup14.",
+  "description": "Startup14 is solving tech problems with cutting-edge innovation.",
+  "problem": "Problem faced in Startup14.",
+  "solution": "Solution offered by Startup14.",
+  "mission": "Mission of Startup14 is to innovate and inspire.",
+  "website_url": "https://startup14.com",
+  "app_store_links": {
+    "android": "https://play.google.com/store/apps/details?id=startup14.app",
+    "ios": "https://apps.apple.com/app/startup14/id1000014"
+  },
+  "pitch_deck_url": "https://example.com/pitchdecks/startup14.pdf",
+  "funding_ask": {
+    "amount_inr": 64000000,
+    "equity_offered_percent": 7
+  },
+  "key_metrics": {
+    "monthly_revenue_inr": 2400000,
+    "active_users": 14000,
+    "cac_inr": 440,
+    "mrr_inr": 1090000
+  },
+  "team_members": [
+    {
+      "name": "Founder14 One",
+      "role": "CEO"
+    },
+    {
+      "name": "Founder14 Two",
+      "role": "CTO"
+    }
+  ]
+}

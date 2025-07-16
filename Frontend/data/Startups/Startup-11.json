@@ -1,0 +1,37 @@
+{
+  "startup_name": "Startup11",
+  "logo_url": "https://example.com/logos/startup11.png",
+  "industry": "Tech",
+  "startup_stage": "Seed",
+  "tagline": "Tagline for Startup11.",
+  "description": "Startup11 is solving tech problems with cutting-edge innovation.",
+  "problem": "Problem faced in Startup11.",
+  "solution": "Solution offered by Startup11.",
+  "mission": "Mission of Startup11 is to innovate and inspire.",
+  "website_url": "https://startup11.com",
+  "app_store_links": {
+    "android": "https://play.google.com/store/apps/details?id=startup11.app",
+    "ios": "https://apps.apple.com/app/startup11/id1000011"
+  },
+  "pitch_deck_url": "https://example.com/pitchdecks/startup11.pdf",
+  "funding_ask": {
+    "amount_inr": 61000000,
+    "equity_offered_percent": 10
+  },
+  "key_metrics": {
+    "monthly_revenue_inr": 2100000,
+    "active_users": 11000,
+    "cac_inr": 410,
+    "mrr_inr": 1060000
+  },
+  "team_members": [
+    {
+      "name": "Founder11 One",
+      "role": "CEO"
+    },
+    {
+      "name": "Founder11 Two",
+      "role": "CTO"
+    }
+  ]
+}

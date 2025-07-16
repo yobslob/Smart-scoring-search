@@ -1,0 +1,37 @@
+{
+  "startup_name": "Startup6",
+  "logo_url": "https://example.com/logos/startup6.png",
+  "industry": "Tech",
+  "startup_stage": "Seed",
+  "tagline": "Tagline for Startup6.",
+  "description": "Startup6 is solving tech problems with cutting-edge innovation.",
+  "problem": "Problem faced in Startup6.",
+  "solution": "Solution offered by Startup6.",
+  "mission": "Mission of Startup6 is to innovate and inspire.",
+  "website_url": "https://startup6.com",
+  "app_store_links": {
+    "android": "https://play.google.com/store/apps/details?id=startup6.app",
+    "ios": "https://apps.apple.com/app/startup6/id100006"
+  },
+  "pitch_deck_url": "https://example.com/pitchdecks/startup6.pdf",
+  "funding_ask": {
+    "amount_inr": 56000000,
+    "equity_offered_percent": 5
+  },
+  "key_metrics": {
+    "monthly_revenue_inr": 1600000,
+    "active_users": 6000,
+    "cac_inr": 360,
+    "mrr_inr": 1010000
+  },
+  "team_members": [
+    {
+      "name": "Founder6 One",
+      "role": "CEO"
+    },
+    {
+      "name": "Founder6 Two",
+      "role": "CTO"
+    }
+  ]
+}

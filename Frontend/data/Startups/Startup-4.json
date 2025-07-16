@@ -1,37 +1,37 @@
 {
-  "startup_name": "ProcureHub",
-  "logo_url": "https://example.com/logos/procurehub.png",
-  "industry": "SaaS / B2B",
-  "startup_stage": "Pre-Series A",
-  "tagline": "Streamlining procurement for Indian SMEs.",
-  "description": "ProcureHub automates the purchase order and supplier management workflows for small manufacturers.",
-  "problem": "Manual procurement processes lead to delays and errors in Indian SMEs.",
-  "solution": "A SaaS platform with inventory sync, vendor matching, and automated POs.",
-  "mission": "To digitize India's manufacturing backbone.",
-  "website_url": "https://procurehub.in",
+  "startup_name": "Startup4",
+  "logo_url": "https://example.com/logos/startup4.png",
+  "industry": "Tech",
+  "startup_stage": "Seed",
+  "tagline": "Tagline for Startup4.",
+  "description": "Startup4 is solving tech problems with cutting-edge innovation.",
+  "problem": "Problem faced in Startup4.",
+  "solution": "Solution offered by Startup4.",
+  "mission": "Mission of Startup4 is to innovate and inspire.",
+  "website_url": "https://startup4.com",
   "app_store_links": {
-    "android": "https://play.google.com/store/apps/details?id=procurehub.app",
-    "ios": "https://apps.apple.com/app/procurehub/id998877112"
+    "android": "https://play.google.com/store/apps/details?id=startup4.app",
+    "ios": "https://apps.apple.com/app/startup4/id100004"
   },
-  "pitch_deck_url": "https://example.com/pitchdecks/procurehub.pdf",
+  "pitch_deck_url": "https://example.com/pitchdecks/startup4.pdf",
   "funding_ask": {
-    "amount_inr": 62250000,
-    "equity_offered_percent": 11
+    "amount_inr": 54000000,
+    "equity_offered_percent": 9
   },
   "key_metrics": {
-    "monthly_revenue_inr": 2656000,
-    "active_users": 160,
-    "cac_inr": 4150,
-    "mrr_inr": 2490000
+    "monthly_revenue_inr": 1400000,
+    "active_users": 4000,
+    "cac_inr": 340,
+    "mrr_inr": 990000
   },
   "team_members": [
     {
-      "name": "Sahil Arora",
-      "role": "Founder & CEO"
+      "name": "Founder4 One",
+      "role": "CEO"
     },
     {
-      "name": "Meenal Jha",
-      "role": "Chief Growth Officer"
+      "name": "Founder4 Two",
+      "role": "CTO"
     }
   ]
 }

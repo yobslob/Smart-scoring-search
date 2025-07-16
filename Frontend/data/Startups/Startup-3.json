@@ -1,37 +1,37 @@
 {
-  "startup_name": "Krishi360",
-  "logo_url": "https://example.com/logos/krishi360.png",
-  "industry": "AgriTech",
-  "startup_stage": "Revenue",
-  "tagline": "Smarter farming, higher yields.",
-  "description": "Krishi360 helps small farmers improve productivity using crop diagnostics, soil health reports, and local language support.",
-  "problem": "Farmers lack data-driven tools for decision making.",
-  "solution": "Mobile-first AI platform offering crop advice, pest alerts, and mandi prices.",
-  "mission": "To increase farmer incomes through smart farming.",
-  "website_url": "https://krishi360.in",
+  "startup_name": "Startup3",
+  "logo_url": "https://example.com/logos/startup3.png",
+  "industry": "Tech",
+  "startup_stage": "Seed",
+  "tagline": "Tagline for Startup3.",
+  "description": "Startup3 is solving tech problems with cutting-edge innovation.",
+  "problem": "Problem faced in Startup3.",
+  "solution": "Solution offered by Startup3.",
+  "mission": "Mission of Startup3 is to innovate and inspire.",
+  "website_url": "https://startup3.com",
   "app_store_links": {
-    "android": "https://play.google.com/store/apps/details?id=krishi360.app",
-    "ios": "https://apps.apple.com/app/krishi360/id765432198"
+    "android": "https://play.google.com/store/apps/details?id=startup3.app",
+    "ios": "https://apps.apple.com/app/startup3/id100003"
   },
-  "pitch_deck_url": "https://example.com/pitchdecks/krishi360.pdf",
+  "pitch_deck_url": "https://example.com/pitchdecks/startup3.pdf",
   "funding_ask": {
-    "amount_inr": 33200000,
-    "equity_offered_percent": 10
+    "amount_inr": 53000000,
+    "equity_offered_percent": 8
   },
   "key_metrics": {
-    "monthly_revenue_inr": 830000,
-    "active_users": 9000,
-    "cac_inr": 250,
-    "mrr_inr": 788500
+    "monthly_revenue_inr": 1300000,
+    "active_users": 3000,
+    "cac_inr": 330,
+    "mrr_inr": 980000
   },
   "team_members": [
     {
-      "name": "Rajeev Yadav",
-      "role": "Founder"
+      "name": "Founder3 One",
+      "role": "CEO"
     },
     {
-      "name": "Deepa Menon",
-      "role": "Product Head"
+      "name": "Founder3 Two",
+      "role": "CTO"
     }
   ]
 }
