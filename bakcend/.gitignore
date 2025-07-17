@@ -1,0 +1,29 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environment variables
+.env
+
+# Virtual environment
+venv/
+env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database or cache files
+*.sqlite3
+*.db
+
+# VSCode / IDE settings
+.vscode/
+.idea/
+
+# Langchain vector DB storage (Chroma default)
+chroma/
