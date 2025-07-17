@@ -56,13 +56,13 @@ GOOGLE_API_KEY=AfcX2******
 Create a virtual environment:
    
    ```bash
-   python -m venv venv # in /backend
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+python -m venv venv # in /backend
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 Install required packages:
    
    ```bash
-    pip install -r requirements.txt
+pip install -r requirements.txt
    ```
 
 ## Installation
@@ -73,14 +73,14 @@ npm install # in /frontend
 
 ## Local Development
  To run the backend:
-    ```bash
-    uvicorn main:app --reload
-    ```
+ ```bash
+uvicorn main:app --reload
+ ```
  To run the frontend:
 
-    ```bash
-    npm run dev
-    ```
+ ```bash
+npm run dev
+ ```
 
 ### Notes
 - You need to configure .env with your Google api key.
