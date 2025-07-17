@@ -1,54 +1,61 @@
-# Sevak
+# Project
 
-Our Project aims to serve as a guardian against scam calls for people and it does so by analysing conversations in real time and also providing users 
-with intelligent “trap-setting” replies in parallel to “test” the scammer and boost the confidence of being a scam call.
+This project is an investor-focused Smart Search Engine. It helps investors find and rank the most suitable startups within a platform that connects investors, startups, brokers, and freelancers.
 ## About
 
-This is a college-level project made for learning and demonstration purposes. It allows users to:
+This project was part of my internship at Prodigal AI. It's a key piece of a new startup platform designed to bring together investors, startups, brokers, and freelancers. My part, the Smart Search Engine for investors, is a helpful tool that:
 
-- Leverages real-time interaction instead of just blocking known numbers.
-- detect new, evolving scam tactics that keyword filters and number blacklists can’t.
-- provides users with intelligent “trap-setting” replies.
-- Scales easily as a service—browser extension, mobile app, or telco integration.
+- Shows investors a ranked list of startups that are a great fit for them.
+- Uses a special "affinity score" to match what investors are looking for with what startups offer.
+- Employs semantic search and vector embedding to understand the meaning behind search terms and startup descriptions, not just keywords.
+- Includes a "profitability score" to highlight startups that look financially promising.
+- Gives each startup an overall relevance score out of 100, making it easier for investors to make smart decisions.
 - Use a simple and modern UI with React and TailwindCSS
 <br>
-Currently, only local-host is supported. Working on deploying it without losing accuracy.
+Currently, only local-host is supported. Working on deploying it on custom server without losing accuracy.
 
 > You’ll need Chrome browser to get the best experience.
 
 <br>
 
-Here’s a preview of the dApp:  
-![Dashboard](frontend/src/assets/dashboard.png)
+Here’s a preview of the webApp:  
+![Dashboard](frontend/src/assets/searchPage.png)
 <br>
 
 ## Tech Stack
 
 ### Frontend
-- React.js
-- Vite
+- Next.js
 - TailwindCSS
 
 ### Backend 
-- Flask
-- Flask-CORS
+- FastAPI
+- Uvicorn
 - Python
-- Torch for deep learning
-- Transformers for NLP models
-- Requests for HTTP requests
+- PyMongo
 
+### Database
+- MongoDB
+
+### Model
+- LangChain
+- LangChain-Google-GenAi
+- LangChain-Community
+
+  
 ## Pre-requisites
-Initialize a **.env file** with hugging face token as:
+From https://aistudio.google.com/apikey
+Initialize a **.env file** in your backend folder with GOOGLE_API_KEY as:
 
 ```bash
-HF_TOKEN = hf_xYbODZ******
+GOOGLE_API_KEY=AfcX2******
 ```
 
 ## Backend Setup
 1. Create a virtual environment:
    
    ```bash
-   python -m venv venv
+   python -m venv venv # in /backend
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
 2. Install required packages:
@@ -60,13 +67,13 @@ HF_TOKEN = hf_xYbODZ******
 ## Installation
 
 ```bash
-npm install
+npm install # in /frontend
 ```
 
 ## Local Development
 1. To run the backend:
     ```bash
-    python Server.py
+    uvicorn main:app --reload
     ```
 2. To run the frontend:
 
@@ -75,5 +82,5 @@ npm install
     ```
 
 ### Notes
-- You need to configure .env with your Hugging Face token.
-- For testing, use Chrome browser for audio processing and integration with your frontend.
+- You need to configure .env with your Google api key.
+- For testing, use Chrome browser for better integration with your frontend.
