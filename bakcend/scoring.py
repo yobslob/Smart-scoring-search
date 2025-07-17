@@ -45,7 +45,7 @@ def score_startups(investor_profile, startups):
         k=len(startup_docs)
     )
 
-    sorted_results = sorted(results, key=lambda x: x[1], reverse=True)
+    sorted_results = sorted(results, key=lambda x: x[1])
 
     final_result = []
     for startup, score in sorted_results:
