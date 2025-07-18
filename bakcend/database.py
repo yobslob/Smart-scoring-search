@@ -26,7 +26,15 @@ def get_investor_profile(investor_id):
         return profile
     return None
 
-def search_startups(keyword):
+def search_startups(keyword, stage_preferences=None, sector_focus=None, regions_preferred=None):
     query = {"$text": {"$search": keyword}}
+    
+    if stage_preferences and len(stage_preferences) > 0:
+        query["startup_stage"] = {"$in": stage_preferences}
+    if sector_focus and len(sector_focus) > 0:
+        query["industry"] = {"$in": sector_focus}
+    if regions_preferred and len(regions_preferred) > 0:
+        query["region"] = {"$in": regions_preferred}
+    
     startups = list(startups_collection.find(query))
     return startups

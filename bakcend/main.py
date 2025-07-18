@@ -22,21 +22,24 @@ class SearchRequest(BaseModel):
 
 @app.post("/search")
 def search(request: SearchRequest):
-    # Construct investor profile dynamically from user-selected filters
-    stage_prefs = ', '.join(request.stage_preferences) if request.stage_preferences else "Not specified"
-    sector_foci = ', '.join(request.sector_focus) if request.sector_focus else "Not specified"
-    regions_prefs = ', '.join(request.regions_preferred) if request.regions_preferred else "Not specified"
+    # Construct investor profile dynamically, including only provided filters
+    investor_profile = "Investor Profile:\n"
+    if request.stage_preferences:
+        investor_profile += f"Stage Preference: {', '.join(request.stage_preferences)}\n"
+    if request.sector_focus:
+        investor_profile += f"Sector Focus: {', '.join(request.sector_focus)}\n"
+    if request.regions_preferred:
+        investor_profile += f"Regions Preferred: {', '.join(request.regions_preferred)}\n"
     
-    investor_profile = f"""
-    Investor Profile:
-    Stage Preference: {stage_prefs}
-    Sector Focus: {sector_foci}
-    Regions Preferred: {regions_prefs}
-    """
     print(investor_profile)
     
-    # Fetch startups from MongoDB using the keyword only
-    startups = search_startups(request.keyword)
+    # Fetch startups using keyword and filters
+    startups = search_startups(
+        request.keyword,
+        request.stage_preferences,
+        request.sector_focus,
+        request.regions_preferred
+    )
     if not startups:
         return []
     

@@ -51,7 +51,7 @@ def score_startups(investor_profile, startups):
         semantic_score = (1 - float(scores)) * 100
         keyMetrics = kmScore(startup.metadata["key_metrics"])
         keyScores = keyMetrics.score()
-        score = round(0.3*semantic_score + 0.7*float(keyScores),2)
+        score = round(0.7*semantic_score + 0.3*float(keyScores),2)
         result ={
             "startup_name": startup.metadata["startup_name"],
             "score": score,
