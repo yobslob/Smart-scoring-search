@@ -24,6 +24,3 @@ Thumbs.db
 # VSCode / IDE settings
 .vscode/
 .idea/
-
-# Langchain vector DB storage (Chroma default)
-chroma/
