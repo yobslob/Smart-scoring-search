@@ -4,12 +4,17 @@ from langchain.schema import Document
 from kmScore import kmScore
 import os
 from dotenv import load_dotenv
+from database import stage_statistics_collection
 
 load_dotenv()
 
 EMBEDDING_MODEL = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
 
 def score_startups(investor_profile, startups):
+    # Fetch precomputed statistics
+    stage_stats_docs = list(stage_statistics_collection.find())
+    stage_stats = {doc['stage']: {'mean': doc['mean'], 'std': doc['std']} for doc in stage_stats_docs}
+
     startup_docs = []
     for startup in startups:
         startup_profile = f"""
@@ -32,7 +37,8 @@ def score_startups(investor_profile, startups):
                 "industry": startup.get('industry', 'N/A'),
                 "stage": startup.get('startup_stage', 'N/A'),
                 "region": startup.get('region', 'N/A'),
-                "key_metrics" : startup.get('key_metrics', [])
+                "key_metrics": startup.get('key_metrics', {}),
+                "funding_ask": startup.get('funding_ask', {})
             }
         )
         startup_docs.append(doc)
@@ -48,11 +54,18 @@ def score_startups(investor_profile, startups):
     )
     final_result = []
     for startup, scores in results:
-        semantic_score = (1 - float(scores)) * 100
-        keyMetrics = kmScore(startup.metadata["key_metrics"])
-        keyScores = keyMetrics.score()
-        score = round(0.7*semantic_score + 0.3*float(keyScores),2)
-        result ={
+        # distances → higher is worse; convert to a 0–100 score
+        raw = (1 - float(scores))
+        semantic_score = max(0.0, min(1.0, raw)) * 100
+        stage = startup.metadata['stage']
+        # Use precomputed stats if available, otherwise default to 0
+        if stage in stage_stats:
+            keyMetrics = kmScore(startup.metadata, stage_stats[stage])
+            keyScores = keyMetrics.score()
+        else:
+            keyScores = 0
+        score = round(0.7 * semantic_score + 0.3 * float(keyScores), 2)
+        result = {
             "startup_name": startup.metadata["startup_name"],
             "score": score,
             "industry": startup.metadata["industry"],
@@ -62,10 +75,7 @@ def score_startups(investor_profile, startups):
             "website": startup.metadata["website"]
         }
         final_result.append((score, result))
-        final_result.sort(key=lambda x: x[0], reverse=True)
+    final_result.sort(key=lambda x: x[0], reverse=True)
 
-    update = []
-    for score, a in final_result:
-        update.append(a)
-
+    update = [a for score, a in final_result]
     return update

@@ -1,54 +1,72 @@
+import math
+import logging
+
 class kmScore:
-    def __init__(self, startup):
-        self.startup = startup
+    def __init__(self, metadata, stage_stats):
+        self.metadata = metadata
+        self.stage_stats = stage_stats
 
-    def score_monthly_revenue(self, x):
-        if x < 500_000: return 0
-        elif x <= 1_000_000: return 20
-        elif x <= 2_500_000: return 40
-        elif x <= 5_000_000: return 60
-        elif x <= 7_500_000: return 80
-        else: return 100
+    def score(self):
+        s = self.metadata
+        stage = s.get('stage', '')
+        key_metrics = s.get('key_metrics', {})
+        industry = s.get('industry', '')
+        funding_ask = s.get('funding_ask', {}).get('amount_inr', 0)
 
-    def score_active_users(self, x):
-        if x < 5_000: return 0
-        elif x <= 10_000: return 20
-        elif x <= 25_000: return 40
-        elif x <= 50_000: return 60
-        elif x <= 75_000: return 80
-        else: return 100
+        # 1) Unified revenue mapping
+        mrr   = key_metrics.get('mrr_inr', 0)
+        mrev  = key_metrics.get('monthly_revenue_inr', 0)
+        revenue = mrr if industry in ['SaaS', 'EdTech'] else mrev
 
-    def score_cac(self, x):
-        if x > 1000: return 0
-        elif x > 700: return 20
-        elif x > 500: return 40
-        elif x > 300: return 60
-        elif x > 200: return 80
-        else: return 100
+        # 2) Basic metrics
+        active_users = key_metrics.get('active_users', 0)
+        cac          = key_metrics.get('cac_inr', 0)
 
-    def score_mrr(self, x):
-        if x < 250_000: return 0
-        elif x <= 750_000: return 20
-        elif x <= 1_500_000: return 40
-        elif x <= 2_500_000: return 60
-        elif x <= 4_000_000: return 80
-        else: return 100
+        # 3) Proxy metrics
+        rev_per_user = revenue / active_users if active_users > 0 else 0
+        ueh_proxy    = rev_per_user / cac     if cac > 0 else 0
+        payback_proxy= (cac / rev_per_user)   if rev_per_user > 0 else 1e6
+        capeff_proxy = (revenue * 12) / funding_ask if funding_ask > 0 else 1e6
 
-    def score(self, weights=None): 
-        if weights is None:
-            weights = {
-                'monthly_revenue_inr': 0.3,
-                'active_users': 0.2,
-                'cac_inr': 0.2,
-                'mrr_inr': 0.3
-            }
+        # 4) Stage stats check
+        if not self.stage_stats:
+            logging.warning(f"No stats for stage '{stage}'")
+            return 0
 
-        s = self.startup
+        means = self.stage_stats['mean']
+        stds  = self.stage_stats['std']
 
-        score = 0
-        score += weights['monthly_revenue_inr'] * self.score_monthly_revenue(s['monthly_revenue_inr'])
-        score += weights['active_users'] * self.score_active_users(s['active_users'])
-        score += weights['cac_inr'] * self.score_cac(s['cac_inr'])
-        score += weights['mrr_inr'] * self.score_mrr(s['mrr_inr'])
+        # 5) Z‑scoring (clamp proxies first)
+        def zs(val, m, sd):
+            return (val - m) / sd if sd > 0 else 0
 
-        return round(score, 2)
+        z_users    = zs(active_users, means['active_users'], stds['active_users'])
+        z_revenue  = zs(revenue,      means['revenue'],      stds['revenue'])
+        z_ueh      = zs(ueh_proxy,    means['ueh_proxy'],     stds['ueh_proxy'])
+        z_payback  = -zs(min(payback_proxy, 1e6), means['payback_proxy'], stds['payback_proxy'])
+        z_capeff   = -zs(min(capeff_proxy, 1e6),  means['capeff_proxy'],  stds['capeff_proxy'])
+
+        # 6) Weights per stage
+        weights = {
+            'Pre-seed': {'users':0.4,'revenue':0.05,'ueh':0.2,'payback':0.05,'capeff':0.3},
+            'Seed':     {'users':0.15,'revenue':0.25,'ueh':0.3,'payback':0.1,'capeff':0.2},
+            'Growth':   {'users':0.1,'revenue':0.2,'ueh':0.25,'payback':0.15,'capeff':0.3},
+            'Series A': {'users':0.05,'revenue':0.3,'ueh':0.2,'payback':0.2,'capeff':0.25},
+            'Series B': {'users':0.05,'revenue':0.35,'ueh':0.15,'payback':0.25,'capeff':0.2},
+        }
+        if stage not in weights:
+            logging.warning(f"Unknown stage '{stage}'")
+            return 0
+
+        w = weights[stage]
+        composite = (
+            z_users   * w['users']   +
+            z_revenue * w['revenue'] +
+            z_ueh     * w['ueh']     +
+            z_payback * w['payback'] +
+            z_capeff  * w['capeff']
+        )
+
+        # 7) Final 0–100 mapping
+        score = 50 + 10 * composite
+        return round(max(0, min(100, score)), 2)
