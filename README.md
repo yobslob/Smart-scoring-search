@@ -43,45 +43,135 @@ Here’s a preview of the webApp:
 - LangChain-Community
 
   
-## Pre-requisites
-From https://aistudio.google.com/apikey
-<br>
-Initialize a **.env file** in your backend folder with GOOGLE_API_KEY as:
+# Project Setup
+
+### Pre-requisites
+
+- Obtain a Google API key from Google AI Studio.
+- Create a .env file in the backend folder (details provided below).
+
+### Setting up Redis
+These instructions are for setting up Redis on Windows using WSL (Windows Subsystem for Linux). Ensure WSL is installed.
+
+1. Open a command prompt as an administrator.
+2. Install WSL if not already installed:
 
 ```bash
-GOOGLE_API_KEY=AfcX2******
+wsl --install
 ```
 
-## Backend Setup
-Create a virtual environment:
-   
-   ```bash
-python -m venv venv # in /backend
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
-Install required packages:
-   
-   ```bash
+3. Launch WSL:
+```bash
+wsl
+```
+
+4. Add the Redis repository:
+```bash
+curl -fsSL https://packages.redis.io/gpg | sudo gpg --dearmor -o /usr/share/keyrings/redis-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/redis-archive-keyring.gpg] https://packages.redis.io/deb $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/redis.list
+
+```
+
+5. Update package lists and install Redis:
+```bash
+sudo apt-get update
+sudo apt-get install redis
+```
+
+6. Start the Redis server:
+```bash
+sudo service redis-server start
+```
+
+7. Edit the Redis configuration file:
+  - Open the file with:
+  ```bash
+  sudo nano /etc/redis/redis.conf
+  ```
+  - A vim environment will show a config file. <br>Make these changes:
+  ```bash
+  Change bind 127.0.0.1 ::1 -> bind 0.0.0.0
+  Change protected-mode yes -> protected-mode no
+  Comment out 'requirepass foobared' by removing '#' from the beginning
+  # requirepass foobared -> requirepass your_password
+  Save with Ctrl + O, press Enter, and exit with Ctrl + X
+  ```
+
+8. Restart the Redis server:
+```bash
+sudo service redis-server restart
+```
+
+9. Verify Redis is running:
+```bash
+redis-cli -a your_password
+```
+
+
+### Backend Setup
+
+1. Open a command prompt in the project’s root directory.
+2. Navigate to the backend directory:
+```bash
+cd backend
+```
+
+3. Create a virtual environment:
+```bash
+python -m venv venv
+```
+
+4. Activate the virtual environment:
+```bash
+On Windows: venv\Scripts\activate
+
+On macOS/Linux: source venv/bin/activate
+```
+
+
+
+5. Install required packages:
+```bash
 pip install -r requirements.txt
-   ```
-
-## Installation
-
-```bash
-npm install # in /frontend
 ```
 
-## Local Development
- To run the backend:
- ```bash
+6. Run the backend server:
+```bash
 uvicorn main:app --reload
- ```
- To run the frontend:
+```
 
- ```bash
+
+### Frontend Setup
+
+1. Open another command prompt in the project’s root directory.
+2. Navigate to the frontend directory:cd frontend
+
+
+3. Install dependencies:
+```bash
+npm install
+```
+
+4. Run the development server:
+```bash
 npm run dev
- ```
+```
+
+
+### .env File Structure
+Place this in the backend folder:
+```bash
+MONGO_URI=mongodb+srv://yogeshxiix:hr16p1076@cluster0.a9ori37.mongodb.net/data?retryWrites=true&w=majority&appName=Cluster0
+GOOGLE_API_KEY=AIzaSyD***********
+REDIS_HOST=127.0.0.1
+REDIS_PORT=6379
+REDIS_PASSWORD=your_password
+```
+
+- Replace your_password with your Redis password.
+- Ensure the GOOGLE_API_KEY matches your actual key.
 
 ### Notes
-- You need to configure .env with your Google api key.
-- For testing, use Chrome browser for better integration with your frontend.
+
+> For testing, use the Chrome browser for better frontend integration.
