@@ -163,7 +163,7 @@ npm run dev
 ### .env File Structure
 Place this in the backend folder:
 ```bash
-MONGO_URI=mongodb+srv://yogeshxiix:hr16p1076@cluster0.a9ori37.mongodb.net/data?retryWrites=true&w=majority&appName=Cluster0
+MONGO_URI=mongodb+srv:***********
 GOOGLE_API_KEY=AIzaSyD***********
 REDIS_HOST=127.0.0.1
 REDIS_PORT=6379
